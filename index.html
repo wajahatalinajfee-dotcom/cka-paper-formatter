@@ -503,6 +503,7 @@ async function makePdf0(){
  function copy(){var c=src.cloneNode(true);c.removeAttribute("id");[].forEach.call(c.querySelectorAll(".pgsp"),function(n){n.remove()});c.style.width="210mm";c.style.minHeight="0";c.style.margin="0";c.style.boxShadow="none";c.style.transform="none";return c}
  try{
   var m=copy();stage.appendChild(m);
+  var em={"Mid Term Examination":"1 SEMESTER MID TERM EXAMINATION","Final Term Examination":"1 SEMESTER FINAL TERM EXAMINATION","Final Term":"1 SEMESTER FINAL TERM EXAMINATION"};if(em[S.exam])S.exam=em[S.exam];if(!S.exam)S.exam="1 SEMESTER FINAL TERM EXAMINATION";
   var cuts=pageCuts(m),top=m.getBoundingClientRect().top;
   var pos=[].map.call(m.querySelectorAll("*"),function(n){var r=n.getBoundingClientRect();return[r.top-top,r.bottom-top]});
   var pdf=new jspdf.jsPDF({unit:"mm",format:"a4",orientation:"p"});
