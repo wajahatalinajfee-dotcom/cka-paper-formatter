@@ -564,7 +564,7 @@ async function doWa(btn){
 document.querySelectorAll(".wa").forEach(function(b){b.addEventListener("click",function(){doWa(b)})});
 document.getElementById("reset").addEventListener("click",function(){
  SNAP=JSON.stringify(S);
- S={exam:"Mid Term Examination",cls:"",subject:"",teacher:S.teacher,time:"",marks:"",keymode:"none",style:"board",lang:S.lang,secA:LG().secA,secB:LG().secB,sections:[]};
+ S={exam:"1 SEMESTER FINAL TERM EXAMINATION",cls:"",subject:"",teacher:S.teacher,time:"",marks:"",keymode:"none",style:"board",lang:S.lang,secA:LG().secA,secB:LG().secB,sections:[]};
  save();fillHeader();renderEditor();renderPaper();showGate();toast("New paper started");
 });
 sec.addEventListener("click",function(e){if(e.target.closest("button"))return;var q=e.target.closest("[data-qtog]");if(q){var pr=q.dataset.qtog.split("-"),qi=+pr[0],qj=+pr[1];if(!QO[qi]){QO[qi]={};S.sections[qi].items.forEach(function(_,x){QO[qi][x]=1})}if(QO[qi][qj])delete QO[qi][qj];else QO[qi][qj]=1;renderEditor();return}var h=e.target.closest("[data-tog]");if(!h)return;var i=+h.dataset.tog;if(OPEN[i])delete OPEN[i];else OPEN[i]=1;renderEditor()});
