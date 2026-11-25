@@ -423,7 +423,7 @@ function renderEditor(){
 }
 
 function autoSession(){var d=new Date(),y=d.getFullYear();if(d.getMonth()<6)y--;return y+"-"+(y+1)}
-function termOf(e){var m=/\b(first|second|mid|final)\s+term\b/i.exec(e||"");var t=m?m[1].charAt(0).toUpperCase()+m[1].slice(1).toLowerCase():"Mid";return t+" Term Examination"}
+function termOf(e){var m=/\b(first|second|mid|final)\s+term\b/i.exec(e||"");var t=m?m[1].charAt(0).toUpperCase()+m[1].slice(1).toLowerCase():"1 SEMESTER";return t+" Term Examination"}
 function fixHdr(){var od={teacher:"Areej Sardar",cls:"9th",subject:"General Science",sect:"A",time:"02 Hours"};if(!S.v3clean){for(var k in od)if(S[k]===od[k])S[k]="";S.v3clean=1}S.exam=termOf(S.exam);delete S.school;delete S.sub;delete S.logo;delete S.logosz;delete S.logopos;["fs1","fs2","fs3","fs4"].forEach(function(k){delete S[k]})}
 function syncSession(){if(S.sessAuto!==false)S.session=autoSession()}
 function fillHeader(){fixHdr();syncSession();document.getElementById("lang").value=S.lang||"en";F.forEach(function(f){document.getElementById(f).value=S[f]||""});document.getElementById("style").value=S.style||"board"}
